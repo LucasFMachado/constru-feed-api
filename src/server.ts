@@ -3,6 +3,7 @@ import 'express-async-errors'
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import { router } from './routes'
+import './database'
 
 const app = express()
 
