@@ -3,6 +3,7 @@ import 'express-async-errors'
 import express, { Request, Response, NextFunction } from 'express'
 import cors from 'cors'
 import { router } from './routes'
+import { errorMessage } from './functions/returnMessages'
 import './database'
 
 const app = express()
@@ -15,14 +16,16 @@ app.use(router)
 
 app.use((error: Error, request: Request, response: Response, next: NextFunction) => {
   if (error instanceof Error) {
-    return response.status(400).json({
-      success: false,
+    return errorMessage({
+      response: response,
+      code: 400,
       message: error.message
     })
   }
 
-  return response.status(500).json({
-    success: false,
+  return errorMessage({
+    response: response,
+    code: 500,
     message: 'Internal server error'
   })
 })

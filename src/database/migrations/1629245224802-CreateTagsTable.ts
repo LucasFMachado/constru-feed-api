@@ -12,30 +12,36 @@ export class CreateTagsTable1629245224802 implements MigrationInterface {
             isPrimary: true,
             isUnique: true,
             isGenerated: true,
-            generationStrategy: 'increment'
+            generationStrategy: 'increment',
+            isNullable: false
           },
           {
             name: 'name',
-            type: 'varchar'
+            type: 'varchar',
+            isNullable: false
           },
           {
             name: 'active',
             type: 'boolean',
+            isNullable: false,
             default: true
           },
           {
             name: 'deleted',
             type: 'boolean',
+            isNullable: false,
             default: false
           },
           {
             name: 'created_at',
             type: 'timestamp',
+            isNullable: false,
             default: 'now()'
           },
           {
             name: 'updated_at',
             type: 'timestamp',
+            isNullable: false,
             default: 'now()'
           }
         ]
