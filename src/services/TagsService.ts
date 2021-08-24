@@ -5,13 +5,13 @@ interface ICreateTagsRequest {
   name: string
 }
 
-interface IUpdateTagRequest {
+interface IUpdateTagsRequest {
   id: number,
   name: string,
   active: boolean
 }
 
-interface IDeleteTagRequest {
+interface IDeleteTagsRequest {
   id: number
 }
 
@@ -40,7 +40,7 @@ class TagsService {
     return tag
   }
 
-  async update ({ id, name, active }: IUpdateTagRequest) {
+  async update ({ id, name, active }: IUpdateTagsRequest) {
     const tagsRepository = getCustomRepository(TagsRepository)
 
     if (!id) {
@@ -59,8 +59,8 @@ class TagsService {
 
     const newTag = {
       ...tag,
-      name: name,
-      active: active
+      name,
+      active
     }
 
     tagsRepository.update(id, newTag)
@@ -70,7 +70,7 @@ class TagsService {
     return newTag
   }
 
-  async delete ({ id } :IDeleteTagRequest) {
+  async delete ({ id } :IDeleteTagsRequest) {
     const tagsRepository = getCustomRepository(TagsRepository)
 
     if (!id) {
