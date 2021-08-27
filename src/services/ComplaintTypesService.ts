@@ -70,7 +70,7 @@ class ComplaintTypesService {
     return newTag
   }
 
-  async delete ({ id } :IDeleteComplaintTypesRequest) {
+  async delete ({ id }: IDeleteComplaintTypesRequest) {
     const complaintTypesRepository = getCustomRepository(ComplaintTypesRepository)
 
     if (!id) {

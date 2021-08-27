@@ -70,7 +70,7 @@ class TagsService {
     return newTag
   }
 
-  async delete ({ id } :IDeleteTagsRequest) {
+  async delete ({ id }: IDeleteTagsRequest) {
     const tagsRepository = getCustomRepository(TagsRepository)
 
     if (!id) {

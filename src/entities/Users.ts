@@ -10,11 +10,11 @@ class Users {
   name: string
 
   @Column()
-  email: string;
+  email: string
 
   @Exclude()
   @Column()
-  password: string;
+  password: string
 
   @Column()
   blocked: boolean
@@ -29,10 +29,10 @@ class Users {
   deleted: boolean
 
   @CreateDateColumn()
-  created_at: Date;
+  created_at: Date
 
   @UpdateDateColumn()
-  updated_at: Date;
+  updated_at: Date
 }
 
 export default Users
