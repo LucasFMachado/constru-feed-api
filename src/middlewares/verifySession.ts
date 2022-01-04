@@ -28,7 +28,6 @@ export default function verifySession (
 
   try {
     const { id, name, email, admin } = verify(token, '88f332bc8f6556e45e3735d7685f9e93') as IPayload
-
     request.user_id = id
     request.user_name = name
     request.user_email = email
